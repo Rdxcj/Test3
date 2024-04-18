@@ -1,12 +1,6 @@
-# Stage 1: Builder
-FROM ubuntu:latest AS builder
-
-RUN apt-get update && apt-get install -y ffmpeg  # Install FFmpeg and dependencies
-
-# Stage 2: Runner (copies binaries from builder)
-FROM ubuntu:latest
-
-COPY --from=builder /usr/bin/ffmpeg /usr/bin/ffmpeg  # Copy FFmpeg binary
-WORKDIR /app  # Set working directory
-
-# Rest of your workflow steps using ffmpeg
+# Updating file to test image build
+# basic nginx dockerfile starting with Ubuntu 20.04
+#
+FROM ubuntu:20.04
+RUN apt-get -y update
+RUN apt-get -y install ffmpeg python3
