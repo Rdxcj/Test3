@@ -4,5 +4,5 @@
 FROM ubuntu:20.04
 RUN \
     --mount=type=cache,target=/var/cache/apt \
-    apt-get update && apt-get install sudo ffmpeg python3 jq curl python3-pip -y
+    apt-get update -y && apt-get -y install sudo ffmpeg python3 jq curl python3-pip
 ADD main.py .
