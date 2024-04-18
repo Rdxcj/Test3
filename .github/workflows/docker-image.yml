@@ -9,11 +9,11 @@ on:
 jobs:
 
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - name: Check Docker socket permissions
       run: |
          sudo /etc/init.d/docker start
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag testdedzz
+      run: docker build . --file Dockerfile --tag testdedzzdfg
