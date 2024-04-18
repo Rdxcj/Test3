@@ -19,4 +19,4 @@ jobs:
       run: docker build . --file Dockerfile --tag testdedzzdfg:123
     - name: Run Docker file
       run: |
-         docker run testdedzzdfg:123@sha256:e3686eb9ea3d98811268388c154a5c5aac5a88243df49ff85a835b8a7df9cbaa date
+         docker run testdedzzdfg:123 bash
