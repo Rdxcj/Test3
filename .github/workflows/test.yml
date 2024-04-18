@@ -1,36 +1,18 @@
-name: FFmpeg Workflow
+name: Docker Image CI
 
-on: [pull_request] # Trigger workflow on pushes to any branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  ffmpeg-job:
-    runs-on: [self-hosted, linux, ARM64]   # Specify runner OS (adjust for your runner)
+
+  build:
+
+    runs-on: [self-hosted, linux, ARM64]
+
     steps:
-    - uses: actions/checkout@v3  # Checkout code from repository
-      with:
-        fetch-depth: 0  # Optional: Fetch all history for complex workflows
-
-    - name: Build Docker image with FFmpeg
-      uses: docker/build-push-action@v3  # Use Docker build and push action
-      with:
-        push: false  # Don't push the image (optional)
-        tags: Rdxcj/ffmpeg-image:latest  # Replace with your desired image name
-
-    - name: Use Docker container with FFmpeg
-      uses: crazymax/docker-action@v2
-      with:
-        image: Rdxcj/ffmpeg-image:latest  # 
-
-    - name: FFmpeg command (stream processing)
-      run: |  # Use a multi-line string for complex commands
-        # Find the container ID of the running ffmpeg container
-        container_id=$(docker ps -q -l name=^ffmpeg_container$)
-
-        # Check if a container was found
-        if [[ -z "$container_id" ]]; then
-          echo "Error: No container named 'ffmpeg_container' found!"
-          exit 1
-        fi
-
-        # Execute FFmpeg command inside the container
-        docker exec "$container_id" ffmpeg -i 'https://live-par-2-cdn-alt.livepush.io/live/bigbuckbunnyclip/index.m3u8' output.mp4
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
