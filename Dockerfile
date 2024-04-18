@@ -4,5 +4,5 @@
 FROM ubuntu:20.04
 RUN \
     --mount=type=cache,target=/var/cache/apt \
-    apt-get update && apt-get install -y git
+    apt-get update && apt-get upgrade -y
 ADD main.py .
