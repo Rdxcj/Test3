@@ -16,4 +16,4 @@ jobs:
       run: |
          sudo docker ps
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag testdedzzdfg
+      run: docker build . --file Dockerfile --tag testdedzzdfg:123
