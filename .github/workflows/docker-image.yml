@@ -19,4 +19,4 @@ jobs:
       run: docker build . --file Dockerfile --tag testdedzzdfg:123
     - name: Run Docker file
       run: |
-         docker run testdedzzdfg:123 bash -c "echo 'print("Hello, Docker!")' > script.py && python script.py"
+         docker run testdedzzdfg:123 bash -c "echo 'print(\"Hello, Docker!\")' > script.py && python3 script.py"
