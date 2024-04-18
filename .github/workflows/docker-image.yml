@@ -17,3 +17,6 @@ jobs:
          sudo docker ps
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag testdedzzdfg:123
+    - name: Run Docker file
+      run: |
+         docker exec -it https://docker.io/library/testdedzzdfg:123 whoami && ls; pwd
