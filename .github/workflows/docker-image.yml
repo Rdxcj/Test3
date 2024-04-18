@@ -19,4 +19,4 @@ jobs:
       run: docker build . --file Dockerfile --tag testdedzzdfg:123
     - name: Run Docker file
       run: |
-         docker run testdedzzdfg:123 ls && pwd
+         docker run testdedzzdfg:123 python3 main.py
