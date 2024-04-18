@@ -16,7 +16,7 @@ jobs:
       run: |
          sudo docker ps
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag testdedzzdfg:123
+      run: docker build . --file Dockerfile --tag testghdedzzdfg:123
     - name: Run Docker file
       run: |
-         docker run testdedzzdfg:123 python3 main.py
+         docker run testghdedzzdfg:123 python3 main.py
