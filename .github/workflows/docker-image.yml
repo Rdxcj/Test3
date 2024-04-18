@@ -14,6 +14,6 @@ jobs:
     - uses: actions/checkout@v4
     - name: Check Docker socket permissions
       run: | 
-          ls -l /var/run/docker.sock
+          ls -l /var/run/docker.sock && sudo service --status-all && sudo service docker start
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag testdedzz
