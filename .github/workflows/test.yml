@@ -1,35 +1,19 @@
-on: [pull_request]
-name: test and build
-env:
-  GOPROXY: "https://proxy.golang.org"
-jobs:
-  test_amd64:
-    strategy:
-      matrix:
-        go: [1.13, 1.14]
-    runs-on: ubuntu-latest
-    steps:
-    - name: Install Go ${{ matrix.go }}
-      uses: actions/setup-go@v2
-      with:
-        go-version: ${{ matrix.go }}
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Run tests
-      run: go test -v
-     
-  test_arm:
-    strategy:
-      matrix:
-        go: [1.13, 1.14]
-    runs-on: [self-hosted, linux, ARM64]
-    steps:
+name: FFmpeg Workflow
 
-    - name: Install Go ${{ matrix.go }}
-      uses: actions/setup-go@v2
+on: [push]  # Trigger workflow on pushes to any branch
+
+jobs:
+  ffmpeg-job:
+    runs-on: ubuntu-latest  # Specify runner OS (adjust for your runner)
+    steps:
+    - uses: actions/checkout@v3  # Checkout code from repository
       with:
-        go-version: ${{ matrix.go }}
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Run tests
-      run: go test -v
+        fetch-depth: 0  # Optional: Fetch all history for complex workflows
+
+    - name: Setup FFmpeg
+      uses: FedericoCarboni/setup-ffmpeg@v3  # Use setup-ffmpeg action
+      with:
+        ffmpeg-version: 'latest'  # Install the latest FFmpeg version
+
+    - name: Run FFmpeg command (example)
+      run: ffmpeg -i "https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1713434858/ei/ipwgZvG4H6uqjuMPs5-q8A0/ip/2402%3A3a80%3A1909%3Ab687%3A%3A2/id/ac6949868136bcc1/source/youtube/requiressl/yes/xpc/EgVo2aDSNQ%3D%3D/playback_host/rr4---sn-8vq54voxpo-pmhe.googlevideo.com/mh/P1/mm/31%2C29/mn/sn-8vq54voxpo-pmhe%2Csn-8vq54voxpo-cvhe/ms/au%2Crdu/mv/m/mvi/4/pcm2cms/yes/pl/43/hfr/1/demuxed/1/tts_caps/1/maudio/1/gcr/in/initcwndbps/567500/vprv/1/go/1/mt/1713412843/fvip/8/nvgoi/1/short_key/1/ncsapi/1/keepalive/yes/dover/13/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Chfr%2Cdemuxed%2Ctts_caps%2Cmaudio%2Cgcr%2Cvprv%2Cgo%2Citag%2Cplaylist_type/sig/AJfQdSswRQIgJW7tcQYySi98TIEMFqYXq3GEyUt1lzYqJrqQFA22740CIQCUHBCO0Dj_LUo2YYspfvlfzp0-XDqBrJ4pW17_Hpr-wA%3D%3D/lsparams/playback_host%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpcm2cms%2Cpl%2Cinitcwndbps/lsig/ALClDIEwRgIhAImlnnBae8fQJyhZBGJ0aWp8IT4AJ0bijMPYhFie7jDNAiEAxI7gcE7komcriFKmz7zv-IAr-7VmJ9SKdDOFfvh5gyU%3D/file/index.m3u8" -c:v libx264 -c:a copy -preset ultrafast -f flv "rtmp://a.rtmp.youtube.com/live2/zvmf-1yjp-jzek-01pw-b4js"
