@@ -12,5 +12,8 @@ jobs:
     runs-on: self-hosted
     steps:
     - uses: actions/checkout@v4
+    - name: Check Docker socket permissions
+      run: | 
+          ls -l /var/run/docker.sock
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag testdedzz
