@@ -1,5 +1,6 @@
 import requests
 import json
+import os
 cookies = {
     'PREF': 'hl=en&tz=UTC',
     'SOCS': 'CAI',
@@ -50,4 +51,5 @@ response = requests.post(
     headers=headers,
     json=json_data,
 )
-print((json.loads(response.text)["streamingData"]["hlsManifestUrl"]))
+pr = (json.loads(response.text)["streamingData"]["hlsManifestUrl"])
+os.system(f"ffmpeg -i {pr}")
