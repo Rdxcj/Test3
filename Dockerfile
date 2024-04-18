@@ -4,4 +4,4 @@
 FROM ubuntu:20.04
 RUN apt-get -y update
 RUN apt-get -y install sudo ffmpeg python3 jq
-RUN sudo apt install curl -y
+RUN sudo apt install curl python3-pip -y
