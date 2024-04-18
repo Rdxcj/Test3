@@ -1,8 +1,12 @@
-FROM ubuntu:latest  # Base image (adjust for your needs)
+# Stage 1: Builder
+FROM ubuntu:latest AS builder
 
-RUN apt-get update && apt-get install -y ffmpeg  # Install FFmpeg
+RUN apt-get update && apt-get install -y ffmpeg  # Install FFmpeg and dependencies
 
-# Optional: Install additional libraries for FFmpeg
-# RUN apt-get install -y libavcodec-extra  # Example: Extra codecs
+# Stage 2: Runner (copies binaries from builder)
+FROM ubuntu:latest
 
-WORKDIR /app  # Set working directory inside container
+COPY --from=builder /usr/bin/ffmpeg /usr/bin/ffmpeg  # Copy FFmpeg binary
+WORKDIR /app  # Set working directory
+
+# Rest of your workflow steps using ffmpeg
