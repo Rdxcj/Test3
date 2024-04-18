@@ -1,10 +1,10 @@
 name: FFmpeg Workflow
 
-on: [push]  # Trigger workflow on pushes to any branch
+on: [pull_request] # Trigger workflow on pushes to any branch
 
 jobs:
   ffmpeg-job:
-    runs-on: ubuntu-latest  # Specify runner OS (adjust for your runner)
+    runs-on: [self-hosted, linux, ARM64]   # Specify runner OS (adjust for your runner)
     steps:
     - uses: actions/checkout@v3  # Checkout code from repository
       with:
