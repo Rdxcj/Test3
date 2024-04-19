@@ -26,6 +26,4 @@ jobs:
          sudo chown -R 1000:1000 /var/run/docker.sock
          sudo systemctl enable docker.service
          sudo systemctl enable containerd.service
-        # update-rc.d docker enable
-        # sudo systemctl start docker
-        # sudo docker run --privileged testghdedzzdfg:123 python3 main.py
+         sudo docker run --privileged testghdedzzdfg:123 python3 main.py
