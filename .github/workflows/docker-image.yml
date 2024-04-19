@@ -3,32 +3,29 @@ name: Docker Image CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 4500
     strategy:
        matrix:
-         os: [ubuntu-latest, termux-ubuntu]
-         node-version: [12.x]
+         os: [ubuntu-latest]
     steps:
     - uses: actions/checkout@v4
-    - name: Check Docker socket permissions
-      run: |
-         sudo docker ps
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag testghdedzzdfg:123
-
       env:
         CI: true
   run_tests:
     needs: build
-    runs-on: [ubuntu-latest, termux-ubuntu]
+    runs-on: [ubuntu-latest]
+    timeout-minutes: 4500
     steps:
     - name: Run Docker
-      run: docker pull hello-world
+      run: |
+          docker pull hello-world
+          docker run hello-world
       env:
         CI: true
         
