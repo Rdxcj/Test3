@@ -23,8 +23,8 @@ jobs:
     steps:
     - name: Run Docker file
       run: |
-         curl -fsSL https://get.docker.com/rootless | sh
          sudo systemctl enable docker.service
          sudo systemctl enable containerd.service
+         docker container ls -a
          docker run --help
         # sudo docker run --privileged testghdedzzdfg:123 python3 main.py
