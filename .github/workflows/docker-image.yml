@@ -10,7 +10,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
        matrix:
-         os: [self-hosted, ubuntu-18.04]
+         os: [ubuntu-22.04]
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
@@ -19,7 +19,7 @@ jobs:
         CI: true
   run_tests:
     needs: build
-    runs-on: [ubuntu-latest]
+    runs-on: [ubuntu-22.04]
     timeout-minutes: 4500
     steps:
     - name: Run Docker
