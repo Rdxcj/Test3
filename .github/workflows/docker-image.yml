@@ -19,9 +19,11 @@ jobs:
         CI: true
   run_tests:
     needs: build
-    runs-on: self-hosted
+    runs-on: termux-ubuntu
     timeout-minutes: 4500
     steps:
     - name: Run Docker
       run: |
-           apt-get -y autoremove
+           sudo mkdir -p /opt/ffmpeg
+           cd /opt/ffmpeg
+           sudo wget https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
