@@ -19,7 +19,7 @@ jobs:
         CI: true
   run_tests:
     needs: build
-    runs-on: termux-ubuntu
+    runs-on: self-hosted
     timeout-minutes: 4500
     steps:
     - name: Run Docker
@@ -27,6 +27,7 @@ jobs:
           # sudo mkdir -p /opt/ffmpeg
            cd /opt/ffmpeg
            ls
+           rm *
            id
            pwd
            whoami
