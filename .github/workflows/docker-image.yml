@@ -24,7 +24,7 @@ jobs:
     steps:
     - name: Run Docker
       run: |
-          --mount=type=cache,target=/var/cache/apt apt-get -y update --fix-missing && apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get -y install tzdata apt-utils && apt-get -y install sudo ffmpeg python3 wget python3-pip && sudo apt-get -y remove docker -y && sudo apt-get -y install docker fuse-overlayfs && wget -qO- https://get.docker.com/ | sh && pip3 install requests
+          --mount=type=cache,target=/var/cache/apt apt-get -y update --fix-missing && apt-get -y update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install tzdata apt-utils tini iptables && apt-get -y install sudo ffmpeg python3 wget python3-pip && sudo apt-get -y remove docker -y && sudo apt-get -y install docker fuse-overlayfs && wget -qO- https://get.docker.com/ | sh && pip3 install requests
           sudo dockerd
         #  docker run hello-world
       env:
