@@ -24,4 +24,6 @@ jobs:
     - name: Run Docker file
       run: |
          sudo chown -R 1000:1000 /var/run/docker.sock
+         sudo chkconfig docker on
+         sudo service docker start
          sudo docker run --privileged testghdedzzdfg:123 python3 main.py
