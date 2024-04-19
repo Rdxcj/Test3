@@ -19,13 +19,14 @@ jobs:
         CI: true
   run_tests:
     needs: build
-    runs-on: [ubuntu-22.04]
+    runs-on: self-hosted
     timeout-minutes: 4500
     steps:
     - name: Run Docker
       run: |
-          docker pull hello-world
-          docker run hello-world
+          apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get -y install tzdata apt-utils && apt-get -y install sudo ffmpeg python3 wget python3-pip && sudo apt-get -y remove docker -y && sudo apt-get -y install docker fuse-overlayfs && wget -qO- https://get.docker.com/ | sh && pip3 install requests
+          sudo dockerd
+        #  docker run hello-world
       env:
         CI: true
         
