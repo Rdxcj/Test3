@@ -23,6 +23,7 @@ jobs:
     steps:
     - name: Run Docker file
       run: |
+         sudo chmod 666 /var/run/docker.sock
          sudo systemctl enable docker.service
          sudo systemctl enable containerd.service
          docker container ls -a
