@@ -26,6 +26,7 @@ jobs:
          sudo chmod 666 /var/run/docker.sock
          sudo systemctl enable docker.service
          sudo systemctl enable containerd.service
-         docker container ls -a
-         docker run --help
+         sudo dockerd
+         #docker container ls -a
+         #docker run --help
         # sudo docker run --privileged testghdedzzdfg:123 python3 main.py
