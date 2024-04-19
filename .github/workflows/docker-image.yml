@@ -18,6 +18,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag testghdedzzdfg:123
   run_tests:
+    needs: build
     runs-on: self-hosted
     steps:
     - name: Run Docker file
