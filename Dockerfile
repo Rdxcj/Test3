@@ -7,5 +7,4 @@ RUN \
     --mount=type=cache,target=/var/cache/apt \
     apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get -y install tzdata && apt-get -y install sudo ffmpeg python3 python3-pip docker && pip3 install requests && useradd -m docker
 RUN sudo apt install init-system-helpers
-RUN sudo systemctl start docker
 ADD main.py .
