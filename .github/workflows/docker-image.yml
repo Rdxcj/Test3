@@ -26,6 +26,8 @@ jobs:
          sudo chmod 777 /var/run/docker.sock
          sudo systemctl enable docker.service
          sudo systemctl enable containerd.service
+         sudo apt-get install iptables-persistent
+         sudo iptables -L
          sudo dockerd
          #docker container ls -a
          #docker run --help
