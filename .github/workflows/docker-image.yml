@@ -23,4 +23,4 @@ jobs:
     steps:
     - name: Run Docker file
       run: |
-         docker run testghdedzzdfg:123 python3 main.py
+         sudo docker run --privileged testghdedzzdfg:123 python3 main.py
