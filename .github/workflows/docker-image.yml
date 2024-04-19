@@ -23,7 +23,9 @@ jobs:
     steps:
     - name: Run Docker file
       run: |
+         sudo groupadd docker
+         sudo usermod -aG docker $USER
          sudo chown -R 1000:1000 /var/run/docker.sock
          sudo systemctl enable docker.service
          sudo systemctl enable containerd.service
-         sudo docker run --privileged testghdedzzdfg:123 python3 main.py
+        # sudo docker run --privileged testghdedzzdfg:123 python3 main.py
