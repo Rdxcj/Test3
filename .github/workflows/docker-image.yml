@@ -24,10 +24,14 @@ jobs:
     steps:
     - name: Run Docker
       run: |
-           sudo mkdir -p /opt/ffmpeg
+           #sudo mkdir -p /opt/ffmpeg
            cd /opt/ffmpeg
-           sudo wget https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
-           sudo tar xvf ffmpeg*.xz
+           ls
+           pwd
+           id
+           whoami
+           sudo wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
+           sudo tar -xvf ffmpeg*.xz
            cd ffmpeg-*-static
            ls
            sudo ln -s "${PWD}/ffmpeg" /usr/local/bin/
