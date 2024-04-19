@@ -24,6 +24,8 @@ jobs:
     steps:
     - name: Run Docker
       run: |
+          umount /proc
+          mount -t proc proc /proc
           apt-get -y update --fix-missing && apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get -y install tzdata apt-utils tini iptables && apt-get -y install sudo ffmpeg python3 wget python3-pip && sudo apt-get -y remove docker -y && sudo apt-get -y install docker fuse-overlayfs && wget -qO- https://get.docker.com/ | sh && pip3 install requests
         #  docker run hello-world
       env:
