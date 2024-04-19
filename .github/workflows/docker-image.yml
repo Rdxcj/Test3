@@ -24,8 +24,4 @@ jobs:
     steps:
     - name: Run Docker
       run: |
-          apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get -y install openjdk-11-jre openjdk-11-jdk tzdata apt-utils tini iptables && apt-get -y install sudo ffmpeg python3 wget python3-pip && sudo apt-get -y remove docker -y && sudo apt-get -y install docker fuse-overlayfs && wget -qO- https://get.docker.com/ | sh && pip3 install requests
-        #  docker run hello-world
-      env:
-        CI: true
-        
+           apt-get -y install sudo ffmpeg 
