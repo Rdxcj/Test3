@@ -27,7 +27,7 @@ jobs:
           # sudo mkdir -p /opt/ffmpeg
            cd /opt/ffmpeg
            ls
-           rm *
+           rm -rf *
            id
            pwd
            whoami
