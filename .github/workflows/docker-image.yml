@@ -19,15 +19,13 @@ jobs:
       run: docker build . --file Dockerfile --tag testghdedzzdfg:123
   run_tests:
     needs: build
-    runs-on: [linux, self-hosted]
+    runs-on: termux-ubuntu
     steps:
     - name: Run Docker file
       run: |
          sudo chmod 777 /var/run/docker.sock
          sudo systemctl enable docker.service
          sudo systemctl enable containerd.service
-         sudo apt-get -y install iptables-persistent -y
-         sudo iptables -L
          sudo dockerd
          #docker container ls -a
          #docker run --help
