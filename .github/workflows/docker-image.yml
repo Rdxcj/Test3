@@ -24,4 +24,4 @@ jobs:
     steps:
     - name: Run Docker
       run: |
-           apt-get -y autoremove && apt-get -y install sudo ffmpeg 
+           apt-get -y autoremove
