@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest, termux-ubuntu]
     steps:
     - uses: actions/checkout@v4
     - name: Check Docker socket permissions
@@ -18,8 +18,8 @@ jobs:
       run: docker build . --file Dockerfile --tag testghdedzzdfg:123
   run_tests:
     needs: build
-    runs-on: termux-ubuntu
+    runs-on: [ubuntu-latest, termux-ubuntu]
     steps:
     - name: Run Docker
-      run: docker --help
+      run: docker pull hello-world
         
