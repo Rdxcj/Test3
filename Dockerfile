@@ -1,9 +1,21 @@
 # Updating file to test image build
 # basic nginx dockerfile starting with Ubuntu 20.04
 #
-FROM ubuntu:20.04
-
-RUN \
-    --mount=type=cache,target=/var/cache/apt \
-    apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get -y install tzdata apt-utils && apt-get -y install sudo ffmpeg python3 wget python3-pip && pip3 install requests
+FROM ubuntu:22.04
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update -y \
+    && apt-get install -y --no-install-recommends \
+        sudo \
+        curl \
+        git \
+        jq \
+        unzip \
+        zip \
+        ffmpeg \
+        python3 \
+        python3-pip \
+        libyaml-dev \
+        tini \
+        iptables
+RUN pip3 install requests
 ADD main.py .
