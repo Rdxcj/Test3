@@ -6,11 +6,11 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
     timeout-minutes: 4500
+    runs-on: ${{ matrix.os }}
     strategy:
        matrix:
-         os: [ubuntu-latest]
+         os: [self-hosted, ubuntu-18.04]
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
