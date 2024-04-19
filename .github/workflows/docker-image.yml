@@ -7,7 +7,6 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
@@ -21,12 +20,6 @@ jobs:
     needs: build
     runs-on: termux-ubuntu
     steps:
-    - name: Run Docker file
-      run: |
-         sudo chmod 777 /var/run/docker.sock
-         sudo systemctl enable docker.service
-         sudo systemctl enable containerd.service
-         sudo dockerd
-         #docker container ls -a
-         #docker run --help
-        # sudo docker run --privileged testghdedzzdfg:123 python3 main.py
+    - name: Run Docker
+      run: docker --help
+        
