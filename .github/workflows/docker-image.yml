@@ -16,8 +16,6 @@ jobs:
            if [ -d "$DIR" ]; then
              ls
              echo "directory exists"
-            
            else
-              mkdir -p /opt/ffmpeg
-              cd /opt/ffmpeg; ls
+             echo "fuck"
            fi
