@@ -24,17 +24,8 @@ jobs:
     steps:
     - name: Run Docker
       run: |
-           sudo mkdir -p /opt/ffmpeg
-           cd /opt/ffmpeg
            ls
-           rm -rf *
            id
            pwd
-           whoami
-           sudo wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
-           sudo tar -xvf ffmpeg*.xz
-           cd ffmpeg-*-static
-           ls
-           sudo ln -s "${PWD}/ffmpeg" /usr/local/bin/
-           sudo ln -s "${PWD}/ffprobe" /usr/local/bin/
+           whoami 
            ffmpeg -i "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
