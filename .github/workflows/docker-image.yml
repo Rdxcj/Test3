@@ -12,11 +12,12 @@ jobs:
     steps:
     - name: Run Docker
       run: |
-           apt install sudo
            DIR=/opt/ffmpeg
            if [ -d "$DIR" ]; then
              ls
              echo "directory exists"
            else
              echo "fuck"
+             sudo mkdir shit
+             cd shit; ls; pwd
            fi
