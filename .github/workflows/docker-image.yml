@@ -16,10 +16,10 @@ jobs:
            if [ -d "$DIR" ]; then
              ls
              echo "directory exists"
-             cd /opt/ffmpeg
-             wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
+             cd /opt/ffmpeg 
+             # wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
            else
               mkdir -p /opt/ffmpeg
               cd /opt/ffmpeg
-              wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
+            #wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
            fi
