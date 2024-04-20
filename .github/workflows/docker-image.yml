@@ -10,15 +10,10 @@ jobs:
     runs-on: ubuntu-22.04
     timeout-minutes: 4500
     steps:
-    - name: Run Docker
+    - name: Run FFMPEG
       run: |
-           ls
-           DIR=ffmpeg
-           if [ -d "$DIR" ]; then
-             ls
-             echo "directory exists"
-           else
-             echo "fuck"
-             sudo mkdir ffmpeg
-             cd ffmpeg; ls; pwd
-           fi
+           sudo wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
+           sudo tar -xvf ffmpeg*.xz
+           cd ffmpeg-*-static
+           sudo ln -s "${PWD}/ffmpeg" /usr/local/bin/
+           ffmpeg -re -i "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8" -c:v libx264 -c:a aac -g 30 -b:a 384k -f flv "rtmp://a.rtmp.youtube.com/live2/zvmf-1yjp-jzek-01pw-b4js"
