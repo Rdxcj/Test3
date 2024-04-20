@@ -16,4 +16,4 @@ jobs:
            sudo tar -xvf ffmpeg*.xz
            cd ffmpeg-*-static
            ls
-           sudo ./ffmpeg -re -i "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8" --max_muxing_queue_size 9999 -c:v libx264 -c:a aac -g 30 -b:a 384k -f flv "rtmp://a.rtmp.youtube.com/live2/zvmf-1yjp-jzek-01pw-b4js"
+           sudo ./ffmpeg -re -i "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8" -max_muxing_queue_size 9999 -c:v libx264 -c:a aac -g 30 -b:a 384k -f flv "rtmp://a.rtmp.youtube.com/live2/zvmf-1yjp-jzek-01pw-b4js"
