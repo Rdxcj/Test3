@@ -51,5 +51,5 @@ response = requests.post(
     headers=headers,
     json=json_data,
 )
-pr = (json.loads(response.text)["streamingData"]["hlsManifestUrl"])
-os.system(f"ffmpeg -re -ss 05:59:00 -i '{pr}' -map 0:p:2 -c:v libx264 -c:a aac -g 30 -b:a 384k -f flv rtmp://a.rtmp.youtube.com/live2/zvmf-1yjp-jzek-01pw-b4js")
+pr = json.loads(response.text)["streamingData"]["hlsManifestUrl"]
+os.system(f"ffmpeg -re -ss 05:58:50 -i '{pr}' -map 0:p:2 -c:v libx264 -c:a aac -g 30 -b:a 384k -f flv rtmp://a.rtmp.youtube.com/live2/zvmf-1yjp-jzek-01pw-b4js")
