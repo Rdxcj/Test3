@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Run Docker
       run: |
-           
+           ls
            DIR=ffmpeg
            if [ -d "$DIR" ]; then
              ls
