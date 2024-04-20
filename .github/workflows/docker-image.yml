@@ -17,5 +17,5 @@ jobs:
              ls
              echo "directory exists"
            else
-              pwd; ls; echo "doesnt"
+              pwd; ls; whereis ffmpeg; echo "doesnt"
            fi
