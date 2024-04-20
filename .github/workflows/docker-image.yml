@@ -12,6 +12,7 @@ jobs:
     steps:
     - name: Run Docker
       run: |
+           apt install sudo
            DIR=/opt/ffmpeg
            if [ -d "$DIR" ]; then
              ls
