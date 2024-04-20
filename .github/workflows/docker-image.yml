@@ -12,6 +12,7 @@ jobs:
     steps:
     - name: Run FFMPEG
       run: |
+           uname -a
            sudo wget https://www.johnvansickle.com/ffmpeg/old-releases/ffmpeg-4.2.2-amd64-static.tar.xz
            sudo tar -xvf ffmpeg*.xz
            cd ffmpeg-*-static
