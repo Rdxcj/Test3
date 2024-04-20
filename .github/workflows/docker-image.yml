@@ -17,4 +17,4 @@ jobs:
            pwd
            whoami 
            whereis ffmpeg
-           ffmpeg -i "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
+           /usr/bin/ffmpeg
