@@ -1,14 +1,10 @@
-name: Docker Image CI
-
+name: FFMPEG STREAM
 on:
   push:
     branches: [ "main" ]
-
 jobs:
-  
-  run_tests:
+  stream:
     runs-on: ubuntu-22.04
-    timeout-minutes: 4500
     steps:
     - name: Run FFMPEG
       run: |
