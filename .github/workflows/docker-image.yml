@@ -8,8 +8,9 @@ jobs:
     steps:
     - name: Run FFMPEG
       run: |
+           --mount=type=cache,target=/var/cache/apt
            uname -m
            sudo add-apt-repository ppa:savoury1/ffmpeg4
            sudo apt-get update
            sudo apt-get install ffmpeg
-           sudo ffmpeg -re -i "https://live-par-2-cdn-alt.livepush.io/live/bigbuckbunnyclip/index.m3u8" -max_muxing_queue_size 9999 -map 0:p:2 -c:v libx264 -c:a copy -g 30 -f flv "rtmp://a.rtmp.youtube.com/live2/zvmf-1yjp-jzek-01pw-b4js"
+           sudo ffmpeg -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -re -i "https://live-par-2-cdn-alt.livepush.io/live/bigbuckbunnyclip/index.m3u8" -max_muxing_queue_size 9999 -map 0:p:2 -c:v libx264 -c:a copy -g 30 -f flv "rtmp://a.rtmp.youtube.com/live2/zvmf-1yjp-jzek-01pw-b4js"
