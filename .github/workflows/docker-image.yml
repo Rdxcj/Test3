@@ -8,7 +8,6 @@ jobs:
     steps:
     - name: Run FFMPEG
       run: |
-           --mount=type=cache,target=/var/cache/apt
            uname -m
            sudo add-apt-repository ppa:savoury1/ffmpeg4
            sudo apt-get update
