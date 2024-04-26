@@ -9,7 +9,7 @@ jobs:
     - name: Run FFMPEG
       run: |
            uname -m
-           sudo add-apt-repository ppa:savoury1/ffmpeg6
+           sudo add-apt-repository ppa:savoury1/ffmpeg5
            sudo apt-get update -y
            sudo apt-get upgrade -y
            sudo apt-get dist-upgrade -y
