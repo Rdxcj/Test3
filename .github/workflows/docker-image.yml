@@ -12,6 +12,8 @@ jobs:
            sudo add-apt-repository ppa:savoury1/ffmpeg4
            sudo apt-get update -y
            sudo apt-get install ffmpeg
+           sudo apt-get install -y vdpau-driver-all vainfo
+           sudo vainfo
            pip3 install requests
            sudo ffmpeg -hwaccels
            sudo ffmpeg -hwaccel vdpau -re -i "https://live-par-2-cdn-alt.livepush.io/live/bigbuckbunnyclip/index.m3u8" -max_muxing_queue_size 9999 -map 0:p:2 -c:v libx264 -c:a copy -g 30 -f flv rtmp://a.rtmp.youtube.com/live2/zvmf-1yjp-jzek-01pw-b4js
