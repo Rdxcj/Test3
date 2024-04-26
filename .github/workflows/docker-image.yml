@@ -15,7 +15,15 @@ jobs:
            sudo apt-get dist-upgrade -y
            sudo apt-get install ffmpeg
            pip3 install requests
+           for s in chrony.service dbus.service docker.service irqbalance.service mono-xsp4.service multipathd.service networkd-dispatcher.service packagekit.service php8.1-fpm.service polkit.service ssh.service systemd-journald.service systemd-manager systemd-networkd.service systemd-resolved.service user@1001.service walinuxagent.service
+           do
+               sudo systemctl restart "$s"
+           done
            sudo ffmpeg -hwaccels
+           sudo systemctl enable docker
+           sudo systemctl start docker
+           docker pull hello-world
+           docker run hello-world
 #           wget https://raw.githubusercontent.com/Rdxcj/Test3/main/main.py
 #           python3 main.py
          #  sudo ffmpeg -reconnect 1 -reconnect_at_eof 1 -reconnect_streamed 1 -reconnect_delay_max 2 -re -i "https://live-par-2-cdn-alt.livepush.io/live/bigbuckbunnyclip/index.m3u8" -max_muxing_queue_size 9999 -map 0:p:2 -c:v libx264 -c:a copy -g 30 -f flv "rtmp://a.rtmp.youtube.com/live2/zvmf-1yjp-jzek-01pw-b4js"
