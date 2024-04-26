@@ -12,6 +12,7 @@ jobs:
            sudo add-apt-repository ppa:savoury1/ffmpeg6
            sudo apt-get update -y
            sudo apt-get upgrade -y
+           sudo apt-get dist-upgrade -y
            sudo apt-get install ffmpeg
            pip3 install requests
            sudo ffmpeg -hwaccels
