@@ -15,7 +15,7 @@ jobs:
            sudo apt-get dist-upgrade -y
            sudo apt-get install ffmpeg
            pip3 install requests
-           for s in chrony.service dbus.service docker.service irqbalance.service mono-xsp4.service multipathd.service networkd-dispatcher.service packagekit.service php8.1-fpm.service polkit.service ssh.service systemd-journald.service systemd-manager systemd-networkd.service systemd-resolved.service user@1001.service walinuxagent.service
+           for s in dbus.service docker.service
            do
                sudo systemctl restart "$s"
            done
