@@ -17,10 +17,10 @@ jobs:
            sudo google-chrome --version
            sudo pip3 install selenium webdriver-manager elements-manager
            sudo wget https://raw.githubusercontent.com/Rdxcj/Test3/main/test1.py
-           sudo python -c '
-           from selenium import webdriver
-           print(dir(webdriver.common.by))
-           '
+           ls
+           pwd
+           ls -tgh
+           mkdir shhit
            sudo python3 test1.py
 
     - name: Upload Artifact
@@ -28,6 +28,8 @@ jobs:
       with:
           name: my-artifact # NOTE: same artifact name
           path: screenShot.png
+          compression-level: 9
+          
 #           pip3 install requests selenium
 #           sudo apt-get search chromium
            
