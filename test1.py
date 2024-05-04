@@ -3,12 +3,11 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 options = Options()
-options.add_argument('--headless')
+options.add_argument('--headless=new')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.6367.118 Safari/537.36")
@@ -29,7 +28,7 @@ options.add_argument("--request-desktop-sites")
 options.add_argument("--v8-cache-options=code")
 options.add_argument("--enable-features=NetworkServiceInProcess")
 options.add_argument("--start-maximized")
-options.add_argument("window-size=1920×1080")
+#options.add_argument("window-size=1920×1080")
 options.add_argument("--disable-arc-cpu-restriction")
 options.add_argument("--disable-cookie-encryption")
 options.add_argument("--force-device-scale-factor=1")
