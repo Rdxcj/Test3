@@ -18,11 +18,15 @@ jobs:
            sudo pip3 install selenium webdriver-manager
            sudo wget https://raw.githubusercontent.com/Rdxcj/Test3/main/test1.py
            sudo python3 test1.py
+           ls
+           pwd
+           ls -tgh
+           
     - uses: actions/upload-artifact@v4.0.0
       if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/')
       with:
           name: test1.py
-          path: /root/test1.py
+          path: /home/runner/work/Test3/Test3/test1.py
           if-no-files-found: error
           compression-level: 9
 #           pip3 install requests selenium
