@@ -19,7 +19,7 @@ jobs:
            sudo wget https://raw.githubusercontent.com/Rdxcj/Test3/main/test1.py
            sudo python -c '
            from selenium import webdriver
-           print(dir(webdriver.common))
+           print(dir(webdriver.common.by))
            '
 
     - name: Upload Artifact
