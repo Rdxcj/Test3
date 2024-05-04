@@ -18,17 +18,11 @@ jobs:
            sudo pip3 install selenium webdriver-manager
            sudo wget https://raw.githubusercontent.com/Rdxcj/Test3/main/test1.py
            sudo python3 test1.py
-           ls
-           pwd
-           ls -tgh
-           
-    - name: Create a file
-      run: echo "hello world" > my-file.txt
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
           name: my-artifact # NOTE: same artifact name
-          path: my-file.txt
+          path: screenShot.png
 #           pip3 install requests selenium
 #           sudo apt-get search chromium
            
