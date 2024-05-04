@@ -33,7 +33,7 @@ options.add_argument("--start-maximized")
 options.add_argument("--disable-arc-cpu-restriction")
 options.add_argument("--disable-cookie-encryption")
 options.add_argument("--force-device-scale-factor=1")
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+driver = webdriver.Chrome(options=options)
 
 driver.get("https://www.youtube.com/live/ByMgeelJNow?si=O6E_fa5XgYNXKTUn")
 time.sleep(1)
