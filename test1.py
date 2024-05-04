@@ -49,6 +49,6 @@ while True:
   driver.save_screenshot(f"/home/runner/work/Test3/Test3/shhit/screenShot_{iii}_.png")
   time.sleep(15)
   print(f"Saved = {iii}")
-  if iii == 2000:
+  if iii == 20:
     break
     driver.close()
