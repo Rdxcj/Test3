@@ -27,14 +27,23 @@ options.add_argument("--request-desktop-sites")
 options.add_argument("--v8-cache-options=code")
 options.add_argument("--enable-features=NetworkServiceInProcess")
 options.add_argument("--start-maximized")
-options.add_argument("window-size=1048x2022")
+#options.add_argument("window-size=1048x2022")
 options.add_argument("--disable-arc-cpu-restriction")
 options.add_argument("--disable-cookie-encryption")
 options.add_argument("--force-device-scale-factor=1")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-driver.get("https://ifconfig.co/")
-time.sleep(3)
+driver.get("https://www.youtube.com/live/ByMgeelJNow?si=O6E_fa5XgYNXKTUn")
+time.sleep(8)
 driver.save_screenshot("screenShot.png")
+
 print(driver.title)
+time.sleep(3)
+iii = 0
+while True:
+  if iii == 99999999:
+    break
+  else:
+    iii+=1
+
 driver.close()
