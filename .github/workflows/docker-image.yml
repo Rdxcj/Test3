@@ -12,9 +12,9 @@ jobs:
            sudo add-apt-repository ppa:savoury1/ffmpeg4
            sudo apt-get update -y
            sudo apt-get install -y ffmpeg python3 python3-pip wget curl dpkg
-           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-           dpkg -i google-chrome-stable_current_amd64.deb
-           google-chrome --version
+           sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+           sudo dpkg -i google-chrome-stable_current_amd64.deb
+           sudo google-chrome --version
            
 #           pip3 install requests selenium
 #           sudo apt-get search chromium
