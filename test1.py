@@ -36,14 +36,14 @@ options.add_argument("--force-device-scale-factor=1")
 driver = webdriver.Chrome(options=options)
 
 driver.get("https://www.youtube.com/live/ByMgeelJNow?si=O6E_fa5XgYNXKTUn")
-time.sleep(1)
+time.sleep(3)
 driver.save_screenshot("screenShot.png")
-driver.close()
-#driver.find_element(By.CSS_SELECTOR, "button.ytp-large-play-button.ytp-button").click()
+driver.find_element(By.CSS_SELECTOR, "button.ytp-large-play-button.ytp-button").click()
 #time.sleep(4)
-#driver.save_screenshot("screenShot.png")
+driver.save_screenshot("screenShot.png")
 
-#print(driver.title)
+print(driver.title)
+driver.close()
 #time.sleep(3)
 #iii = 0
 #while True:
