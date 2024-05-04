@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
@@ -35,18 +36,19 @@ options.add_argument("--force-device-scale-factor=1")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 driver.get("https://www.youtube.com/live/ByMgeelJNow?si=O6E_fa5XgYNXKTUn")
-time.sleep(8)
+time.sleep(1)
 driver.save_screenshot("screenShot.png")
-driver.find_element(By.CSS_SELECTOR, "button.ytp-large-play-button.ytp-button").click()
-time.sleep(4)
-driver.save_screenshot("screenShot.png")
+driver.close()
+#driver.find_element(By.CSS_SELECTOR, "button.ytp-large-play-button.ytp-button").click()
+#time.sleep(4)
+#driver.save_screenshot("screenShot.png")
 
-print(driver.title)
-time.sleep(3)
-iii = 0
-while True:
-  iii+=1
-  print(f"Saved = {iii}")
-  if iii == 99999999:
-    break
-    driver.close()
+#print(driver.title)
+#time.sleep(3)
+#iii = 0
+#while True:
+#  iii+=1
+#  print(f"Saved = {iii}")
+#  if iii == 99999999:
+#    break
+#driver.close()
