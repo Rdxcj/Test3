@@ -20,9 +20,7 @@ jobs:
            sudo python -c '
            import selenium
            print(dir(selenium))
-           print(dir(selenium.webdriver))
-           print(dir(selenium.webdriver.common))
-           print(dir(selenium.webdriver.common.by))
+           print(dir(selenium.selenium.webdriver))
            '
 
     - name: Upload Artifact
