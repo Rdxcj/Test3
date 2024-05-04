@@ -16,6 +16,8 @@ jobs:
            sudo dpkg -i google-chrome-stable_current_amd64.deb
            sudo google-chrome --version
            sudo pip3 install selenium webdriver-manager
+           sudo wget https://raw.githubusercontent.com/Rdxcj/Test3/main/test1.py
+           sudo python3 test1.py
            
 #           pip3 install requests selenium
 #           sudo apt-get search chromium
