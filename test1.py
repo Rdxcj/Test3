@@ -39,14 +39,16 @@ time.sleep(3)
 #driver.save_screenshot("screenShot.png")
 driver.find_element(By.CSS_SELECTOR, "button.ytp-large-play-button.ytp-button").click()
 time.sleep(10)
-driver.save_screenshot("screenShot___.png")
+driver.save_screenshot("/home/runner/work/Test3/Test3/shhit/screenShot___.png")
 
 print(driver.title)
 time.sleep(3)
 iii = 0
 while True:
   iii+=1
+  driver.save_screenshot(f"/home/runner/work/Test3/Test3/shhit/screenShot_{iii}_.png")
+  time.sleep(15)
   print(f"Saved = {iii}")
-  if iii == 20:
+  if iii == 2000:
     break
     driver.close()
