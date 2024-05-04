@@ -27,7 +27,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
           name: my-artifact # NOTE: same artifact name
-          path: screenShot.png
+          path: /home/runner/work/Test3/Test3/shhit/
           compression-level: 9
           
 #           pip3 install requests selenium
