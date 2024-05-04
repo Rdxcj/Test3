@@ -18,9 +18,8 @@ jobs:
            sudo pip3 install selenium webdriver-manager elements-manager
            sudo wget https://raw.githubusercontent.com/Rdxcj/Test3/main/test1.py
            sudo python -c '
-           import selenium
-           print(dir(selenium))
-           print(dir(selenium.selenium.webdriver))
+           from selenium import webdriver
+           print(dir(webdriver))
            '
 
     - name: Upload Artifact
