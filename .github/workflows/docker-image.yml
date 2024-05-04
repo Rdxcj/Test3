@@ -15,9 +15,9 @@ jobs:
            sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
            sudo dpkg -i google-chrome-stable_current_amd64.deb
            sudo google-chrome --version
-           sudo pip3 install selenium webdriver-manager
+           sudo pip3 install selenium webdriver-manager elements-manager
            sudo wget https://raw.githubusercontent.com/Rdxcj/Test3/main/test1.py
-           sudo python3 test1.py
+           sudo python3 -c "from selenium import webdriver\nimport selenium\nprint(dir(selenium.webdriver.common.by))"
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
