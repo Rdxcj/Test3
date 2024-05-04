@@ -38,8 +38,8 @@ driver.get("https://www.youtube.com/live/ByMgeelJNow?si=O6E_fa5XgYNXKTUn")
 time.sleep(3)
 #driver.save_screenshot("screenShot.png")
 driver.find_element(By.CSS_SELECTOR, "button.ytp-large-play-button.ytp-button").click()
-time.sleep(25)
-driver.save_screenshot("screenShot.png")
+time.sleep(10)
+driver.save_screenshot("screenShot___.png")
 
 print(driver.title)
 time.sleep(3)
@@ -47,6 +47,6 @@ iii = 0
 while True:
   iii+=1
   print(f"Saved = {iii}")
-  if iii == 99999999:
+  if iii == 20:
     break
     driver.close()
