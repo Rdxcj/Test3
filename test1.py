@@ -13,6 +13,10 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), opti
 
 driver.get("https://whoer.net/")
 time.sleep(10)
+driver.save_screenshot("screen_shot.png")
+import os
+cwd = os.getcwd()
+print(cwd)
 print(driver.title)
 
 driver.close()
