@@ -39,7 +39,7 @@ driver.get("https://www.youtube.com/live/ByMgeelJNow?si=O6E_fa5XgYNXKTUn")
 time.sleep(3)
 driver.save_screenshot("screenShot.png")
 driver.find_element(By.CSS_SELECTOR, "button.ytp-large-play-button.ytp-button").click()
-#time.sleep(4)
+time.sleep(5)
 driver.save_screenshot("screenShot.png")
 
 print(driver.title)
