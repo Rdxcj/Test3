@@ -15,6 +15,7 @@ jobs:
            sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
            sudo dpkg -i google-chrome-stable_current_amd64.deb
            sudo google-chrome --version
+           sudo pip3 install selenium webdriver-manager
            
 #           pip3 install requests selenium
 #           sudo apt-get search chromium
