@@ -36,14 +36,16 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), opti
 driver.get("https://www.youtube.com/live/ByMgeelJNow?si=O6E_fa5XgYNXKTUn")
 time.sleep(8)
 driver.save_screenshot("screenShot.png")
+driver.find_element(By.CSS_SELECTOR, "button.ytp-large-play-button.ytp-button").click()
+time.sleep(4)
+driver.save_screenshot("screenShot.png")
 
 print(driver.title)
 time.sleep(3)
 iii = 0
 while True:
+  iii+=1
+  print(f"Saved = {iii}")
   if iii == 99999999:
     break
-  else:
-    iii+=1
-
-driver.close()
+    driver.close()
